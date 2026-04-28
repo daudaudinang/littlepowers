@@ -1,67 +1,67 @@
-# Installing Superpowers for Codex
+# Cài đặt LittlePowers cho Codex
 
-Enable superpowers skills in Codex via native skill discovery. Just clone and symlink.
+Bật LittlePowers skills trong Codex qua native skill discovery. Chỉ cần clone và symlink.
 
-## Prerequisites
+## Yêu cầu
 
 - Git
 
-## Installation
+## Cài đặt
 
-1. **Clone the superpowers repository:**
+1. **Clone repository littlepowers:**
    ```bash
-   git clone https://github.com/obra/superpowers.git ~/.codex/superpowers
+   git clone https://github.com/daudaudinang/littlepowers.git ~/.codex/littlepowers
    ```
 
-2. **Create the skills symlink:**
+2. **Tạo symlink cho skills:**
    ```bash
    mkdir -p ~/.agents/skills
-   ln -s ~/.codex/superpowers/skills ~/.agents/skills/superpowers
+   ln -s ~/.codex/littlepowers/skills ~/.agents/skills/littlepowers
    ```
 
    **Windows (PowerShell):**
    ```powershell
    New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills"
-   cmd /c mklink /J "$env:USERPROFILE\.agents\skills\superpowers" "$env:USERPROFILE\.codex\superpowers\skills"
+   cmd /c mklink /J "$env:USERPROFILE\.agents\skills\littlepowers" "$env:USERPROFILE\.codex\littlepowers\skills"
    ```
 
-3. **Restart Codex** (quit and relaunch the CLI) to discover the skills.
+3. **Restart Codex** (thoát và mở lại CLI) để discover skills.
 
-## Migrating from old bootstrap
+## Di chuyển từ bootstrap cũ
 
-If you installed superpowers before native skill discovery, you need to:
+Nếu bạn cài superpowers trước khi có native skill discovery:
 
-1. **Update the repo:**
+1. **Cập nhật repo:**
    ```bash
-   cd ~/.codex/superpowers && git pull
+   cd ~/.codex/littlepowers && git pull
    ```
 
-2. **Create the skills symlink** (step 2 above) — this is the new discovery mechanism.
+2. **Tạo symlink cho skills** (bước 2 ở trên) — đây là cơ chế discovery mới.
 
-3. **Remove the old bootstrap block** from `~/.codex/AGENTS.md` — any block referencing `superpowers-codex bootstrap` is no longer needed.
+3. **Xóa block bootstrap cũ** khỏi `~/.codex/AGENTS.md` — block nào reference `superpowers-codex bootstrap` không còn cần.
 
 4. **Restart Codex.**
 
-## Verify
+## Xác nhận
 
 ```bash
-ls -la ~/.agents/skills/superpowers
+ls -la ~/.agents/skills/littlepowers
 ```
 
-You should see a symlink (or junction on Windows) pointing to your superpowers skills directory.
+Bạn sẽ thấy symlink (hoặc junction trên Windows) trỏ tới thư mục skills của littlepowers.
 
-## Updating
+## Cập nhật
 
 ```bash
-cd ~/.codex/superpowers && git pull
+cd ~/.codex/littlepowers && git pull
 ```
 
-Skills update instantly through the symlink.
+Skills cập nhật ngay qua symlink.
 
-## Uninstalling
+## Gỡ cài đặt
 
 ```bash
-rm ~/.agents/skills/superpowers
+rm ~/.agents/skills/littlepowers
 ```
 
-Optionally delete the clone: `rm -rf ~/.codex/superpowers`.
+Tùy chọn xóa clone: `rm -rf ~/.codex/littlepowers`.

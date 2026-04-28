@@ -1,6 +1,6 @@
 {
-  "name": "superpowers",
-  "description": "Core skills library: TDD, debugging, collaboration patterns, and proven techniques",
-  "version": "5.0.7",
+  "name": "littlepowers",
+  "description": "Phương pháp phát triển phần mềm cho coding agents: TDD, debugging, collaboration patterns & workflow chuẩn",
+  "version": "0.1.0",
   "contextFileName": "GEMINI.md"
 }
