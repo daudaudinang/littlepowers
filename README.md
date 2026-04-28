@@ -33,14 +33,13 @@ Cập nhật: `/plugin marketplace update`
 
 ### OpenAI Codex CLI
 
-Đăng ký marketplace và cài plugin:
+Đăng ký marketplace:
 
 ```bash
 codex plugin marketplace add daudaudinang/littlepowers
-codex plugin install littlepowers@littlepowers
 ```
 
-Cập nhật: `codex plugin marketplace update`
+Restart Codex — plugin tự động được install và hiện trong danh sách. Cập nhật: `codex plugin marketplace upgrade`
 
 **Fallback (Codex CLI cũ hơn):** Clone và symlink thủ công:
 

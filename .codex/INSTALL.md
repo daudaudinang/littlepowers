@@ -6,19 +6,24 @@ Yêu cầu Codex CLI phiên bản hỗ trợ `plugin marketplace`:
 
 ```bash
 codex plugin marketplace add daudaudinang/littlepowers
-codex plugin install littlepowers@littlepowers
 ```
+
+Restart Codex — plugin tự động được install và hiện trong danh sách plugin.
+
+### Cách hoạt động
+
+Lệnh `marketplace add` clone repo về và đọc `.agents/plugins/marketplace.json` — file catalog liệt kê plugin `littlepowers` với policy `INSTALLED_BY_DEFAULT`. Codex install plugin vào `~/.codex/plugins/cache/littlepowers/littlepowers/local/` và load skills từ đó.
 
 ### Cập nhật
 
 ```bash
-codex plugin marketplace update
+codex plugin marketplace upgrade
 ```
 
 ### Gỡ cài đặt
 
 ```bash
-codex plugin uninstall littlepowers
+codex plugin marketplace remove daudaudinang/littlepowers
 ```
 
 ---
@@ -58,8 +63,6 @@ Dùng khi Codex CLI chưa hỗ trợ `plugin marketplace`, hoặc bạn muốn k
 ls -la ~/.agents/skills/littlepowers
 ```
 
-Bạn sẽ thấy symlink (hoặc junction trên Windows) trỏ tới thư mục skills của littlepowers.
-
 ### Cập nhật
 
 ```bash
@@ -72,9 +75,9 @@ Skills cập nhật ngay qua symlink.
 
 ```bash
 rm ~/.agents/skills/littlepowers
+# Tùy chọn xóa clone:
+rm -rf ~/.codex/littlepowers
 ```
-
-Tùy chọn xóa clone: `rm -rf ~/.codex/littlepowers`.
 
 ---
 
